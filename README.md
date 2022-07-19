@@ -8,7 +8,7 @@ Read data from #victron mppt charger and transport to #mqtt server with esp32
 Main changes to original repository:
 - platform is esp32
 - using platfomio
-- using https://github.com/cterwilliger/VeDirectFrameHandler Chris Terwilliger  to read Ve.direct data
+- using https://github.com/cterwilliger/VeDirectFrameHandler from Chris Terwilliger  to read Ve.direct data
 - using HardwareSerial instead of SoftwareSerial
 - publish only changed key/value pairs
 - publish all key/value pairs uninterpreted (this could be done later in Home Assistant or Node Red)
