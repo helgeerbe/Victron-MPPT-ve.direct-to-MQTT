@@ -1,9 +1,20 @@
 # Victron MPPT ve.direct to MQTT
 
 
-<a href="https://www.buymeacoffee.com/kindr007" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+Fork of https://github.com/KinDR007/Victron-MPPT-ve.direct-to-MQTT.
 
-Read data from #victron mppt charger and transport to #mqtt server with esp8266 nodemcu v1
+Read data from #victron mppt charger and transport to #mqtt server with esp32 
+
+Main changes to original repository:
+- platform is esp32
+- using platfomio
+- using https://github.com/cterwilliger/VeDirectFrameHandler Chris Terwilliger  to read Ve.direct data
+- using HardwareSerial instead of SoftwareSerial
+- publish only changed key/value pairs
+- publish all key/value pairs uninterpreted (this could be done later in Home Assistant or Node Red)
+- reconnect on wifi lost
+
+
 
 Home Assistant dashboard
 ![alt text](https://github.com/KinDR007/Victron-MPPT-ve.direct-to-MQTT/blob/master/HA.png?raw=true)
@@ -103,7 +114,3 @@ Home Assitant example config
 > MPPTs deliver 5V TX signals, therefore you need a voltage divider or level shipfter for MCU's RX pins.
 >
 > Check Victron's manuals if you are in doubt.
-
-
-
-<a href="https://www.buymeacoffee.com/kindr007"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=kindr007&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>
